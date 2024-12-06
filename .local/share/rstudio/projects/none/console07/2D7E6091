@@ -53,3 +53,101 @@ Stack trace:
     at async mainRunner (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118128:9)
     at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118235:5[39m
 ]0;~[?2004hrstudio@950e8a80dec5:~$ quarto render docs/qmd_example.qmd --to html[?2004l[?2004h[?2004l
+]0;~[?2004hrstudio@e120bd74dd38:~$ quarto render docs/qmd_example.qmd --to html
+[?2004l[91mERROR: No valid input files passed to render
+
+Stack trace:
+    at Command.actionHandler (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:83100:15)
+    at eventLoopTick (ext:core/01_core.js:153:7)
+    at async Command.execute (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:8017:13)
+    at async Command.parseCommand (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:7907:20)
+    at async quarto (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118224:9)
+    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118244:9
+    at async mainRunner (file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118128:9)
+    at async file:///usr/lib/rstudio-server/bin/quarto/bin/quarto.js:118235:5[39m
+]0;~[?2004hrstudio@e120bd74dd38:~$ pwd
+[?2004l/home/rstudio
+]0;~[?2004hrstudio@e120bd74dd38:~$ ls
+[?2004ldata		    Dockerfile	dsci-310-individual-assignment-quarto.Rproj  README.md	results
+docker-compose.yml  docs	LICENSE					     reports	scripts
+]0;~[?2004hrstudio@e120bd74dd38:~$ lspwdquarto render docs/qmd_example.qmd --to html[1P[1P[1P[1P[1@r[1@e[1@p[1@o[1@r[1@t[1@s
+[?2004l[31m
+
+processing file: qmd_example.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |..........                                          |  20%                    |                                                            |.....................                               |  40% [unnamed-chunk-1]  |                                                            |...............................                     |  60%                    |                                                            |..........................................          |  80% [tbl-horses-sd]    |                                                            |....................................................| 100%                                                                                                                              
+[31moutput file: qmd_example.knit.md
+
+[39m[1mpandoc [22m
+  to: html
+  output-file: qmd_example.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  
+[1mmetadata[22m
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: 'DSCI 310: Historical Horse Population in Canada'
+  author: Tiffany Timbers & Jordan Bourak
+  editor: source
+  bibliography:
+    - references.bib
+  toc-location: right
+  tbl-cap-location: bottom
+  
+Output created: qmd_example.html
+
+]0;~[?2004hrstudio@e120bd74dd38:~$ quarto render reports/qmd_example.qmd --to html[C[C[K[K[K[Kpdf
+[?2004l[31m
+
+processing file: qmd_example.qmd
+[39m  |                                                            |                                                    |   0%  |                                                            |..........                                          |  20%                    |                                                            |.....................                               |  40% [unnamed-chunk-1]  |                                                            |...............................                     |  60%                    |                                                            |..........................................          |  80% [tbl-horses-sd]    |                                                            |....................................................| 100%                                                                                                                              
+[31moutput file: qmd_example.knit.md
+
+[39m[1mpandoc [22m
+  to: latex
+  output-file: qmd_example.tex
+  standalone: true
+  pdf-engine: xelatex
+  variables:
+    graphics: true
+    tables: true
+  default-image-extension: pdf
+  
+[1mmetadata[22m
+  documentclass: scrartcl
+  classoption:
+    - DIV=11
+    - numbers=noendperiod
+  papersize: letter
+  header-includes:
+    - '\KOMAoption{captions}{tableheading}'
+  block-headings: true
+  title: 'DSCI 310: Historical Horse Population in Canada'
+  author: Tiffany Timbers & Jordan Bourak
+  editor: source
+  bibliography:
+    - references.bib
+  
+[1m[34m
+Rendering PDF[39m[22m
+[1m[34mrunning xelatex - 1[39m[22m
+  This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+[1m[34mrunning xelatex - 2[39m[22m
+  This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex)
+   restricted \write18 enabled.
+  entering extended mode
+  
+
+Output created: qmd_example.pdf
+
+]0;~[?2004hrstudio@e120bd74dd38:~$ [?2004l[?2004h[?2004l
