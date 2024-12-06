@@ -1,0 +1,15 @@
+services:
+  # run jupyter notebook inside jupyter 
+  rstudio:
+    image:  ttimbers/dsci-522-individual-assignment-quarto-r:86552dd
+    ports:
+      - "8787:8787"
+    volumes:
+      - .:/home/rstudio
+    environment:
+      PASSWORD: password
+    deploy:
+      resources:
+        limits:
+          memory: 5G
+    platform: linux/amd64
